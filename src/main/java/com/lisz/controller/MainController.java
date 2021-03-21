@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
 
 @RestController
 public class MainController {
@@ -51,6 +50,11 @@ public class MainController {
 	public Flux<Person> findAll(){
 		return personDao.findAll();
 	}
+
+//	@GetMapping("/gateway/findAll")
+//	public Flux<Person> gatewayFindAll(){
+//		return personDao.findAll();
+//	}
 
 	// 响应式的，分页就不好使了
 //	@GetMapping("/findAllPaged")

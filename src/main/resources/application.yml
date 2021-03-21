@@ -1,0 +1,10 @@
+#spring.data.mongodb.uri=mongodb://192.168.1.102
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lisz:123@eureka-7900:7900/eureka/,http://lisz:123$eureka-7901:7901/eureka/
+spring:
+  application:
+    name: mongodb
+server:
+  port: 8080
