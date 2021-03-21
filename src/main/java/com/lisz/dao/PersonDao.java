@@ -2,10 +2,10 @@ package com.lisz.dao;
 
 import com.lisz.entity.Person;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import reactor.core.publisher.Flux;
 
-import java.util.List;
+public interface PersonDao extends ReactiveMongoRepository<Person, String> {
 
-public interface PersonDao extends MongoRepository<Person, String> {
-
-	List<Person> findByNameLike(String name);
+	Flux<Person> findByNameLike(String name);
 }
