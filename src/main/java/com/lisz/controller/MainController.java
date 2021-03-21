@@ -28,8 +28,15 @@ public class MainController {
 		return personDao.findById(id);
 	}
 
+	@GetMapping("/person")
+	public Mono<Person> getPerson2(@RequestParam String id){
+		System.out.println("id: " + id);
+		return personDao.findById(id);
+	}
+
 	@PostMapping("/save")
 	public Mono<Person> save(@RequestBody Person person) {
+		//int i = 1/0;
 		System.out.println("saving..." + person);
 		return personDao.save(person);
 	}

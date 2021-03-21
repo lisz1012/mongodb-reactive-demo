@@ -1,11 +1,15 @@
 package com.lisz.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(value = "aaa")
 public class Person implements Serializable {
 	@Id
@@ -16,13 +20,6 @@ public class Person implements Serializable {
 	private int age;
 	@Field
 	private Double price;
-
-	public Person(String id, String name, int age, Double price) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.price = price;
-	}
 
 	public String getId() {
 		return id;
